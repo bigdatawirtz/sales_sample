@@ -1,0 +1,25 @@
+# Tarefa 1 con MySQL
+# Arrancar:  docker compose up -d
+# Consola:   docker exec -it  mysql-vendas bash
+# Cliente mysql: mysql -uroot -pbigdata 
+# Parar:     docker compose down        (engade -v para borrar tamén os datos)
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: mysql-vendas
+    environment:
+      MYSQL_ROOT_PASSWORD: bigdata
+      MYSQL_DATABASE: vendas
+    ports:
+      - "3306:3306"
+    volumes:
+      # Os CSV vanse ver dentro do contedor en /var/lib/mysql-files,
+      # o único directorio desde o que MySQL permite LOAD DATA INFILE (secure_file_priv).
+      - ./datos/raw:/var/lib/mysql-files/tarefa1
+      # Os scripts SQL, para executalos desde dentro do contedor
+      - ./sql:/sql:ro
+      # Datos da base de datos (persisten entre reinicios)
+      - mysql_datos:/var/lib/mysql
+
+volumes:
+  mysql_datos:
