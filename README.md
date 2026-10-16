@@ -41,12 +41,15 @@ pip install -r requirements.txt
 Para lanzar o script principal situado na carpeta `src`:
 
 ```bash
+# Tarefa 1
 python src/tarefa1.py
+# Tarefa 2
+python src/tarefa2.py
 ```
 
 ---
 
-### 5. Levantar a infraestrutura con Docker Compose
+### 5. Levantar a infraestrutura con base de datos usando Docker-Compose
 
 Para iniciar os servizos definidos en `docker-compose.yml`:
 
@@ -68,5 +71,8 @@ Para executar a carga de datos e consultas no servidor SQL
 
 
 ```bash
+# Tarefa 1: carga os datos + executa consultas 
 docker exec mysql-vendas sh -c 'mysql -uroot -pbigdata vendas < /sql/tarefa1.sql'
+# Tarefa 2
+docker exec mysql-vendas sh -c 'mysql -uroot -pbigdata vendas < /sql/tarefa2.sql'
 ```
