@@ -15,7 +15,7 @@ services:
     volumes:
       # Os CSV vanse ver dentro do contedor en /var/lib/mysql-files,
       # o único directorio desde o que MySQL permite LOAD DATA INFILE (secure_file_priv).
-      - ./datos/raw:/var/lib/mysql-files/tarefa1
+      - ./datos/raw:/var/lib/mysql-files/tarefa
       # Os scripts SQL, para executalos desde dentro do contedor
       - ./sql:/sql:ro
       # Datos da base de datos (persisten entre reinicios)

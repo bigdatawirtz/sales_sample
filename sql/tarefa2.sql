@@ -15,7 +15,7 @@ CREATE TABLE vendas_t2 (
 -- Carga do CSV.
 -- Problema: os decimais veñen con coma (549,90) e MySQL espera punto (549.90).
 -- Solución: ler eses campos en variables (@prezo, @importe) e cambiar a coma por punto.
-LOAD DATA INFILE '/var/lib/mysql-files/tarefa1/vendas_2025-full.csv'
+LOAD DATA INFILE '/var/lib/mysql-files/tarefa/vendas_2025-full.csv'
 INTO TABLE vendas_t2
 CHARACTER SET utf8mb4
 FIELDS TERMINATED BY ';'
